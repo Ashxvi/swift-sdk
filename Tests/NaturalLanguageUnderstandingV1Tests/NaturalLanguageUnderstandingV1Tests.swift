@@ -429,6 +429,7 @@ class NaturalLanguageUnderstandingTests: XCTestCase {
             XCTAssertNotNil(results.sentiment)
             XCTAssertNotNil(results.sentiment?.document)
             XCTAssertNotNil(results.sentiment?.document?.score)
+            XCTAssertNotNil(results.sentiment?.document?.label)
             XCTAssertNotNil(results.sentiment?.targets)
             for target in (results.sentiment?.targets)! {
                 XCTAssertNotNil(target.text)
@@ -455,6 +456,7 @@ class NaturalLanguageUnderstandingTests: XCTestCase {
             XCTAssertNotNil(results.sentiment)
             XCTAssertNotNil(results.sentiment?.document)
             XCTAssertNotNil(results.sentiment?.document?.score)
+            XCTAssertNotNil(results.sentiment?.document?.label)
             XCTAssertNil(results.sentiment?.targets)
             expectation.fulfill()
         }

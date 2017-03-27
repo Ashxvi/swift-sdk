@@ -39,9 +39,14 @@ public struct DocumentSentimentResults: JSONDecodable {
     /// Sentiment score from -1 (negative) to 1 (positive).
     public let score: Double?
     
+    /// Sentiment label negative, neutral or positive.
+    public let label: String?
+    
     /// Used internally to initialize a `DocumentSentimentResults` model from JSON.
     public init(json: JSON) throws {
         score = try? json.getDouble(at: "score")
+        label = try? json.getString(at: "label")
+
     }
 }
 
@@ -54,9 +59,14 @@ public struct TargetedSentimentResults: JSONDecodable {
     /// Sentiment score from -1 (negative) to 1 (positive).
     public let score: Double?
     
+    /// Sentiment label negative, neutral or positive.
+    public let label: String?
+    
     /// Used internally to initialize a `TargetedSentimentResults` model from JSON.
     public init(json: JSON) throws {
         text = try? json.getString(at: "text")
         score = try? json.getDouble(at: "score")
+        label = try? json.getString(at: "label")
+
     }
 }
